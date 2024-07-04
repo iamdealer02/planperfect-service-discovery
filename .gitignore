@@ -1,0 +1,17 @@
+# Ignore IDE specific settings
+.idea/
+.vscode/
+
+# Ignore virtual environment
+.venv/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore database files
+.dbdata/
+
+
+
+# environment file
+.env

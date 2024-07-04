@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8003:8003
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - services-network
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: user
+      MYSQL_ROOT_PASSWORD: root 
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 33066:3306
+    networks:
+      - services-network  
+
+networks:
+  services-network:
+    external: true
