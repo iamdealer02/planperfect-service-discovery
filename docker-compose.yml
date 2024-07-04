@@ -17,7 +17,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: user
+      MYSQL_DATABASE: servicediscovery
       MYSQL_ROOT_PASSWORD: root 
     volumes:
       - .dbdata:/var/lib/mysql
