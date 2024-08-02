@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8003:8003
+    volumes:
+      - .:/app
+    networks:
+      - services-network
+    environment:
+      DATABASE_URL: mysql://root:root@db:3306/servicediscovery  
+
+
+networks:
+  services-network:
+    external: true
+
+volumes:
+  service-dbdata:  
